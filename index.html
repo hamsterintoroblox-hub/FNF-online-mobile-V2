@@ -1,0 +1,207 @@
+ 
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FNF Online</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+    margin: 0;
+    min-height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 50% 20%, #432568 0%, transparent 35%),
+        linear-gradient(135deg, #08080f, #171027, #09090e);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: min(900px, 94%);
+    text-align: center;
+    padding: 30px 0;
+}
+
+.logo {
+    font-size: clamp(48px, 13vw, 90px);
+    font-weight: 900;
+    font-style: italic;
+    color: #5de7ff;
+    text-shadow:
+        5px 5px #ff4b9b,
+        9px 9px #000;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #d0ccdc;
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: rgba(18, 16, 30, .94);
+    border: 2px solid #4b3968;
+    border-radius: 24px;
+    padding: 35px 20px;
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.6),
+        inset 0 0 30px rgba(130,70,200,.08);
+}
+
+.play {
+    border: 0;
+    border-radius: 16px;
+    padding: 18px 55px;
+    color: white;
+    background: #ff4b9b;
+    font-size: 25px;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 0 7px #98265a;
+    touch-action: manipulation;
+}
+
+.play:active {
+    transform: translateY(6px);
+    box-shadow: 0 1px #98265a;
+}
+
+.info {
+    margin-top: 25px;
+    color: #9d98ad;
+    font-size: 14px;
+}
+
+#game {
+    display: none;
+    margin-top: 25px;
+}
+
+#game iframe {
+    width: 100%;
+    height: 70vh;
+    min-height: 450px;
+    border: 2px solid #4b3968;
+    border-radius: 15px;
+    background: black;
+}
+
+.back {
+    display: none;
+    margin-top: 15px;
+    padding: 12px 24px;
+    border: 1px solid #5b536f;
+    border-radius: 10px;
+    background: #29253a;
+    color: white;
+    font-size: 16px;
+    touch-action: manipulation;
+}
+
+.notice {
+    margin-top: 20px;
+    color: #706b7c;
+    font-size: 12px;
+}
+
+@media (max-width: 600px) {
+
+    .card {
+        padding: 28px 14px;
+    }
+
+    #game iframe {
+        height: 72vh;
+        min-height: 400px;
+    }
+
+    .play {
+        width: 90%;
+        max-width: 350px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="logo">FNF ONLINE</div>
+
+    <div class="subtitle">
+        Play in your browser — no download required.
+    </div>
+
+    <div class="card">
+
+        <button class="play" id="playButton">
+            ▶ PLAY FNF
+        </button>
+
+        <div class="info">
+            📱 Works on phones and iPad
+        </div>
+
+        <div id="game">
+            <iframe
+                id="gameFrame"
+                src="fnf/index.html"
+                allow="autoplay; fullscreen">
+            </iframe>
+        </div>
+
+        <button class="back" id="backButton">
+            ← Back
+        </button>
+
+        <div class="notice">
+            FNF web version
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+const playButton = document.getElementById("playButton");
+const backButton = document.getElementById("backButton");
+const game = document.getElementById("game");
+
+playButton.addEventListener("click", function () {
+
+    playButton.style.display = "none";
+    game.style.display = "block";
+    backButton.style.display = "inline-block";
+
+});
+
+backButton.addEventListener("click", function () {
+
+    game.style.display = "none";
+    backButton.style.display = "none";
+    playButton.style.display = "inline-block";
+
+});
+</script>
+
+</body>
+```
+```
+</html>
+```
